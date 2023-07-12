@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\TestController;
+use App\Http\Livewire\{
+    ShowTweets,
+    TestController
+};
 
-Route::get('/livewire', [TestController::class, 'render'])->name('livewire');
+
+Route::get('tweets', ShowTweets::class);
+
+Route::get('/test', TestController::class);
 
 Route::get('/', function() {
     echo "<h1>";
