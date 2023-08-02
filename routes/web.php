@@ -5,9 +5,7 @@ use App\Http\Livewire\{
     ShowTweets,
     TestController
 };
-
-
-Route::get('tweets', ShowTweets::class)->middleware('auth');
+use App\Http\Livewire\User\UploadPhoto;
 
 Route::get('/test', TestController::class);
 
@@ -25,4 +23,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/upload', UploadPhoto::class)->name('user.upload.photo');
+    Route::get('/tweets', ShowTweets::class)->name('tweets.index');
 });
