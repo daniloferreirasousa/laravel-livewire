@@ -1,6 +1,9 @@
 <div>
-    Show Tweets
+    <h3>O que você está pensando hoje?</h3>
 
+    {{-- Abaixo está um exemplo de Data-Binding, onde o valor que está sendo
+        digitado no input é atualizado no parágrafo
+    --}}
     <p>{{ $content }}</p><br>
 
     <form method="post" wire:submit.prevent='create'>
@@ -12,6 +15,9 @@
     </form>
 
     <hr>
+
+    {{-- Exibição dos Tweet's --}}
+    <h2>Feed de Tweet's</h2>
 
     @foreach($tweets as $tweet)
         {{ $tweet->user->name }} - {{ $tweet->content }}
@@ -26,6 +32,7 @@
 
     <hr>
 
+    {{-- Links de Páginação --}}
     <div>
         {{ $tweets->links() }}
     </div>
