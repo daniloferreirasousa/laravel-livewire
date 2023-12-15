@@ -12,10 +12,14 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('assets/js/app.js') }}" defer></script>
+        <script src="{{ asset('assets/js/bootstrap.js') }}" defer></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/tailwindcss.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+
+
 
         @livewireStyles
     </head>
@@ -25,7 +29,7 @@
         <div class="min-h-screen bg-gray-100">
            <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <livewire:show-tweets />
             </main>
         </div>
 

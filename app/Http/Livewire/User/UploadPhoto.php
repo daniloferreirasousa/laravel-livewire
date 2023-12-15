@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 class UploadPhoto extends Component
 {
     use WithFileUploads;
-    
+
     public $photo;
 
     public function render()

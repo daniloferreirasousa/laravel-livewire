@@ -6,6 +6,7 @@ use App\Http\Livewire\{
     TestController
 };
 use App\Http\Livewire\User\UploadPhoto;
+use App\Http\Controllers\HomeController;
 
 Route::get('/test', TestController::class);
 
@@ -26,4 +27,6 @@ Route::middleware([
 
     Route::get('/upload', UploadPhoto::class)->name('user.upload.photo');
     Route::get('/tweets', ShowTweets::class)->name('tweets.index');
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });

@@ -11,6 +11,7 @@ class ShowTweets extends Component
     use WithPagination;
 
     public $content = '';
+    public $color = 'white';
 
     protected $rules = [
         'content' => 'required|min:3|max:255'
