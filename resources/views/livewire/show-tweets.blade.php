@@ -20,12 +20,27 @@
     <h2>Feed de Tweet's</h2>
 
     @foreach($tweets as $tweet)
-        {{ $tweet->user->name }} - {{ $tweet->content }}
-        @if($tweet->likes->count())
-            <a href="">Descurtir</a>
-        @else
-            <a href="">Curtir</a>
-        @endif
+    <div class="flex">
+        <div class="w-2/8">
+            @if($tweet->user->photo)
+                <img src='{{ url("storage/{$tweet->user->poto}") }}' alt="{{ $tweet->user->name }}" class="rounded-full h-8 w-8">
+            @else
+                <img src='{{ url("imgs/no-photo.png") }}' alt="{{ $tweet->user->name }}" class="rounded-full h-8 w-8">
+            @endif
+        </div>
+        <div class="w-6/8">
+            {{ $tweet->user->name }} - {{ $tweet->content }}
+            @if($tweet->likes->count())
+                <a href="#" wire:click.prevent="unlike({{ $tweet->id }})">Descurtir</a>
+            @else
+                <a href="#" wire:click.prevent="like({{ $tweet->id }})">Curtir</a>
+            @endif
+        </div>
+    </div>
+        
+
+
+        
 
         <br>
     @endforeach
